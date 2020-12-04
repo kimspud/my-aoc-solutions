@@ -5,7 +5,7 @@ terrain_map = []
 product = 1
 
 # read input file and make list from input
-with open("day3_input.txt", "r") as input:
+with open("day_3_input.txt", "r") as input:
     for line in input:
         terrain_map.append(line.replace("\n", ""))
 

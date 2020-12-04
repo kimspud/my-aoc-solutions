@@ -2,7 +2,7 @@
 
 def old_policy_valid_count():
     valid_count = 0
-    with open("day2_input.txt", "r") as input:
+    with open("day_2_input.txt", "r") as input:
         for line in input:
             password_list = list(line.split(" "))
             range = list(password_list[0].split("-"))
@@ -14,7 +14,7 @@ def old_policy_valid_count():
 
 def new_policy_valid_count():
     valid_count = 0
-    with open("day2_input.txt", "r") as input:
+    with open("day_2_input.txt", "r") as input:
         for line in input:
             password_list = list(line.split(" "))
             range = list(password_list[0].split("-"))
@@ -26,5 +26,5 @@ def new_policy_valid_count():
                valid_count = valid_count + 1
         return valid_count
 
-old_policy_valid_count()
-new_policy_valid_count()
+print(old_policy_valid_count())
+print(new_policy_valid_count())
