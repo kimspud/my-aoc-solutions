@@ -9,7 +9,6 @@ min_column = 0
 seat_ids = []
 
 def find_row(row_code, max_row, min_row):
-    print("row found " + str(row_code))
     for r in row_code:
         mid = (min_row + max_row) // 2
         if r == "F": 
@@ -23,7 +22,6 @@ def find_row(row_code, max_row, min_row):
     return(max_row)
     
 def find_column(column_code, max_column, min_column):
-    print("column found " + str(column_code))
     for c in column_code:
         mid = (min_column + max_column) // 2
         if c == "L": 
@@ -57,4 +55,6 @@ for code in seat_codes:
     seat_id =  row * 8 + column
     seat_ids.append(seat_id)
 print(max(seat_ids))
-print(sorted(seat_ids))
+seat_ids = sorted(seat_ids)
+print(sorted(set(range(seat_ids[0], seat_ids[-1])) - set(seat_ids)))
+    
