@@ -57,3 +57,4 @@ for code in seat_codes:
     seat_id =  row * 8 + column
     seat_ids.append(seat_id)
 print(max(seat_ids))
+print(sorted(seat_ids))
