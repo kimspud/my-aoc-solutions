@@ -2,3 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Advent of Code puzzles and input are not liscened so ignore input files
+#.input.txt
