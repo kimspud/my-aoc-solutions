@@ -39,7 +39,6 @@ with open("day_5_input.txt", "r") as data:
     for line in data:
         seat_codes.append(line.strip())
     #passports = input.replace('\n', ' ')
-    print(seat_codes)
 
 for code in seat_codes:
     seat_code = code
@@ -54,7 +53,7 @@ for code in seat_codes:
     column = find_column(column_code, max_column, min_column)
     seat_id =  row * 8 + column
     seat_ids.append(seat_id)
-print(max(seat_ids))
+print("part_1 " + (str(max(seat_ids))))
 seat_ids = sorted(seat_ids)
-print(sorted(set(range(seat_ids[0], seat_ids[-1])) - set(seat_ids)))
+print("part_2 " + str(sorted(set(range(seat_ids[0], seat_ids[-1])) - set(seat_ids))))
     
