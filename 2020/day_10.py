@@ -1,4 +1,5 @@
 # day 10
+from itertools import combinations
 
 my_adapters = []
 current_jolt_rating = 0
@@ -16,7 +17,7 @@ def part_1(my_adapters, current_jolt_rating):
     #print(f"my adapters: {my_adapters}")
     current_jolt_ratings = [(current_jolt_rating + 1), (current_jolt_rating + 2), (current_jolt_rating + 3)]
     differences = []
-    # find joltage of built-in-adapter and add it to the list
+    # find joltage of built-in-adapter
     built_in_adapter = max(my_adapters) + 3
     #print(f"built_in_adapter: {built_in_adapter}")
 
@@ -52,6 +53,37 @@ def part_1(my_adapters, current_jolt_rating):
     result = count_of_1 * count_of_3
     print(f"result: {result}")
 
-part_1(my_adapters, current_jolt_rating)
+def find_combo(my_adapters, current_jolt_rating, built_in_device):
+    print(f"current_jolt_rating: {current_jolt_rating}")
+    print(f"built_in_device: {built_in_device}")
+    if current_jolt_rating + 3 == int(built_in_device):
+        return 1
 
-        
+    next_max = current_jolt_rating + 3
+    print(f"next_max: {next_max}")
+    match_count = 0
+    comb = []
+    for n in range(0,len(my_adapters)+1):
+        comb.append([i for i in combinations(my_adapters,n)])
+    print(f"combinations: {comb}")
+    print(f"combinations_length: {len(comb)}")
+    
+    for list in comb:
+        new_adapters = list
+        print(f"new_adapters: {new_adapters}")
+        #for new_adapter in new_adapters:
+            
+            #print(f"adapter: {new_adapter}")
+            #while adapter != next_max:
+                    
+def part_2(my_adapters):
+    for i in range(0, len(my_adapters)): 
+        my_adapters[i] = int(my_adapters[i]) 
+    my_adapters = sorted(my_adapters)
+    built_in_adapter = max(my_adapters) + 3
+    current_jolt_rating = 0
+    
+    find_combo(my_adapters, current_jolt_rating, built_in_adapter)
+
+#part_1(my_adapters, current_jolt_rating)
+part_2(my_adapters)
