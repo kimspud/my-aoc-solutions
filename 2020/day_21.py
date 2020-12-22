@@ -28,9 +28,17 @@ with open("day_21_input.txt", "r") as data:
             else:
                 somedict[allergen] = ingredient_set
 
-    print(f"somedict {somedict}")
-    print("--------------------------")
-    print(f"full_ingredients {full_ingredients}")
+         
+    
+    sorted_keys = sorted (somedict.keys())
+    print (sorted_keys) 
+    somelist = []
+    for key in sorted_keys:
+        somelist.append(list(somedict[key]))
+    print(f"somelist = {somelist}")
+
+    #print("--------------------------")
+    #print(f"full_ingredients {full_ingredients}")
 
 # remove ingredients that are possible allergens
 remaining_ingredients = full_ingredients
@@ -40,7 +48,7 @@ for allergen_ingredient_set in somedict.values():
             del remaining_ingredients[ingredient]
         # ingredients.append(line.strip("\n").split("(contains")  
 
-print(f"remaining ingredients {remaining_ingredients}")
+#print(f"remaining ingredients {remaining_ingredients}")
 
 # add up the count of the remaining ingredients
 count = 0
@@ -48,19 +56,9 @@ for val in remaining_ingredients.values():
     count += val
 #print(f"ingredients: {ingredients}")
 
-print(f"final count {count}")
+#print(f"final count {count}")
 
 
-
-
-
-
-            
-
-
-print("------------------")
-#print(f"allergens: {allergens}")
-print("---------------------------")
 
 
 
